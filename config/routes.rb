@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
-  root to: "public/homes#top"
-  namespace :public do
+  # root to: "public/homes#top"
+  # namespace :public do
     get "home/about" => "home#about",as:'about'
     resources :items, only: [:index, :show]
     resources :customers, only: [:show, :edit, :update]
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       post "orders/confirm" => "public/orders#confirm"
       get "ordes/complete" => "public/orders#complete"
     resources :addresses, skip: [:new, :show]
-  end
+  # end
 
 
   # 管理者用
@@ -43,7 +43,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  
+
 
 
 end
