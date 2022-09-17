@@ -7,11 +7,15 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
-  # root to: "public/homes#top"
+
   # namespace :public do
+    root to: "public/homes#top"
     get "home/about" => "home#about",as:'about'
     resources :items, only: [:index, :show]
-    resources :customers, only: [:show, :edit, :update]
+    #customersのrouting↓
+      get 'customers/my_page' => 'customers#show'
+      get 'customers/infomation/edit' => 'customers#edit'
+      patch 'customers/infomation' => 'customers#update'
       get 'customers/unsubscribe' => 'customers#unsubscribe'
       patch 'customers/withdraw' => 'customers#withdraw'
     resources :cart_items, only: [:index, :update, :destroy, :create]
