@@ -73,11 +73,11 @@
 
   <% else %>
         <li>
-         <%= link_to public_about_path, class: 'nav-link text-light' do %>
+         <%= link_to about_path, class: 'nav-link text-light' do %>
           <i class="fas fa-link"></i> About
          <% end %>
         <li>
-         <%= link_to public_items_path, class: 'nav-link text-light' do %>
+         <%= link_to items_path, class: 'nav-link text-light' do %>
           <i class="fa-solid fa-cake-candles"></i> 商品一覧
          <% end %>
         </li>
@@ -99,7 +99,7 @@
 </nav>
 <!--検索窓-->
 <div class="search-form text-right">
-  <%= form_with url: public_items_path, method: :get, local: true do |f| %>
+  <%= form_with url: items_path, method: :get, local: true do |f| %>
     <%= f.text_field :item, value: @item %>
     <button type="button" class="btn btn-primary">検索</button>
   <% end %>
