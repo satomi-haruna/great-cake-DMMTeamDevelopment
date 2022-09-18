@@ -1,17 +1,17 @@
-class GenresController < ApplicationController
+class Admin::GenresController < ApplicationController
 
   def index
-    @genre = Genre.new
-    #index画面で新規ジャンルを登録する
     @genres = Genre.all
     #登録されている全てのジャンルを呼び出す
+    @new_genre = Genre.new
+    #index画面で新規ジャンルを登録する
   end
 
   def create
     @genres = Genre.all
-    @genre = Genre.new(genre_params)
-    if @genre.save
-      flash[:notice] = "ジャンルが追加されました"
+    @new_genre = Genre.new(genre_params)
+    if @new_genre.save
+      flash[:notice] = "正常に追加されました"
       redirect_to admin_genres_path
     else
       render :index
