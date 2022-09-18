@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # 顧客用
   # URL /customers/sign_in ...
-  devise_for :customers,skip: [:passwords], controllers:{
+  devise_for :customers, skip: [:passwords], controllers:{
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :index, :create, :show]
       post "orders/confirm" => "public/orders#confirm"
       get "ordes/complete" => "public/orders#complete"
-    resources :addresses, skip: [:new, :show]
+    resources :addresses, except: [:new, :show]
    end
 
 
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "homes#top"
-    resources :items, skip: [:destroy]
+    resources :items, except: [:destroy]
     resources :genres, only: [:index, :create, :edit, :update]
     resources :customers, only: [:index, :show, :edit, :update]
     resources :orders, only: [:show, :update]
