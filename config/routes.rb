@@ -7,11 +7,12 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
-   namespace :public do
-      root to: "homes#top"
-      get "about" => "homes#about"
-    resources :items, only: [:index, :show]
-    #customersのrouting↓
+
+    root to: "public/homes#top"
+    get "about" => "publilc/homes#about"
+    scope module: 'public' do
+      resources :items, only: [:index, :show]
+      #customersのrouting↓
       get 'customers/my_page' => 'customers#show'
       get 'customers/infomation/edit' => 'customers#edit'
       patch 'customers/infomation' => 'customers#update'
