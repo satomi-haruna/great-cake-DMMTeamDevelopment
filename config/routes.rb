@@ -7,9 +7,9 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
-   namespace :public do
-      root to: "homes#top"
-      get "about" => "homes#about"
+   root to: "public/homes#top"
+   get "about" => "public/homes#about"
+   scope module: 'public' do
     resources :items, only: [:index, :show]
     #customersのrouting↓
       get 'customers/my_page' => 'customers#show'
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :index, :create, :show]
       post "orders/confirm" => "public/orders#confirm"
       get "ordes/complete" => "public/orders#complete"
+      #get "addresses" => "public/addresses#index"
     resources :addresses, except: [:new, :show]
    end
 
