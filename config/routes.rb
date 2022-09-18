@@ -7,10 +7,9 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
-
-  # namespace :public do
-    root to: "public/homes#top"
-    get "home/about" => "home#about",as:'about'
+   namespace :public do
+      root to: "homes#top"
+      get "about" => "homes#about"
     resources :items, only: [:index, :show]
     #customersのrouting↓
       get 'customers/my_page' => 'customers#show'
@@ -24,7 +23,7 @@ Rails.application.routes.draw do
       post "orders/confirm" => "public/orders#confirm"
       get "ordes/complete" => "public/orders#complete"
     resources :addresses, skip: [:new, :show]
-  # end
+   end
 
 
   # 管理者用
