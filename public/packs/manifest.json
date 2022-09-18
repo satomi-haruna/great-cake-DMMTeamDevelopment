@@ -5,10 +5,10 @@
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-26effa74b966c8c1588b.js"
+        "/packs/js/application-d8ddbf2fa22aa0fdc47e.js"
       ],
       "js.map": [
-        "/packs/js/application-26effa74b966c8c1588b.js.map"
+        "/packs/js/application-d8ddbf2fa22aa0fdc47e.js.map"
       ]
     }
   }
