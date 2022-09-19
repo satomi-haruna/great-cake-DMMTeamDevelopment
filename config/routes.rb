@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  # namespace :public do
+  #   get 'customers/show'
+  # end
+
   # 顧客用
   # URL /customers/sign_in ...
   devise_for :customers, skip: [:passwords], controllers:{
@@ -25,7 +29,7 @@ Rails.application.routes.draw do
       get "ordes/complete" => "public/orders#complete"
       #get "addresses" => "public/addresses#index"
     resources :addresses, except: [:new, :show]
-   end
+  end
 
 
   # 管理者用

@@ -71,12 +71,12 @@
                   <% end %>
                 </li>
 
-
               <% else %>
                 <li>
                   <%= link_to about_path, class: 'nav-link text-light' do %>
                     <i class="fas fa-link"></i> About
                   <% end %>
+                </li>
                 <li>
                   <%= link_to items_path, class: 'nav-link text-light' do %>
                     <i class="fa-solid fa-cake-candles"></i> 商品一覧
@@ -89,24 +89,24 @@
                   <%= link_to new_customer_session_path,class: 'nav-link text-light' do %>
                     <i class="fas fa-sign-in-alt"></i> ログイン
                   <% end %>
-                <li>
+                </li>
                 <li>
                   <%= link_to new_admin_session_path,class: 'nav-link text-light' do %>
                     <i class="fas fa-sign-in-alt"></i> 管理者ログイン
                   <% end %>
-                <li>
+                </li>
               <% end %>
             </ul>
           </div>
-          <!--検索窓-->
-          <div class="search-form text-right">
-            <%= form_with url: items_path, method: :get, local: true do |f| %>
-              <%= f.text_field :item, value: @item %>
-              <button type="button" class="btn btn-primary">検索</button>
-            <% end %>
-          </div>
         </div>
       </nav>
+      <!--検索窓-->
+      <div class="search-form text-right">
+        <%= form_with url: items_path, method: :get, local: true do |f| %>
+          <%= f.text_field :item, value: @item %>
+          <button type="button" class="btn btn-primary">検索</button>
+        <% end %>
+      </div>
     </header>
 
     <main>
