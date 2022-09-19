@@ -1,0 +1,38 @@
+<h2>注文履歴一覧</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>注文日</th>
+      <th>配送先</th>
+      <th>注文商品</th>
+      <th>支払い金額</th>
+      <th>ステータス</th>
+      <th>注文詳細</th>
+    </tr>
+  </thead>
+  <% @orders.each do |order| %>
+  <tbody>
+    <tr>
+      <td><%= order.created_at.to_date %></td>
+      <td>
+      〒<%= order.post_code %><br>
+      <%= order.address %><br>
+      <%= order.name %>
+      </td>
+      <table>
+        <% order.order_detail.each do |order_detail| %>
+        <tbody>
+          <tr>
+            <td><%= order_detail.item.name %></td>
+          </tr>
+        </tbody>
+       <% end %>
+      </table>
+      <td><%= order.total_payment.to_s(:delimited) %></td>
+      <td><%= order.status_i18n %></td>
+      <td><%= link_to "表示する", order_path(@order), class: "btn btn-primary" %></td>
+    </tr>
+  </tbody>
+ <% end %>
+</table>

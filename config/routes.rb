@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  
   # 顧客用
   # URL /customers/sign_in ...
   devise_for :customers,skip: [:passwords], controllers:{
@@ -10,18 +11,18 @@ Rails.application.routes.draw do
    root to: "public/homes#top"
    get "about" => "public/homes#about"
    scope module: 'public' do
-    resources :items, only: [:index, :show]
     #customersのrouting↓
       get 'customers/my_page' => 'customers#show'
       get 'customers/infomation/edit' => 'customers#edit'
       patch 'customers/infomation' => 'customers#update'
       get 'customers/unsubscribe' => 'customers#unsubscribe'
       patch 'customers/withdraw' => 'customers#withdraw'
-    resources :cart_items, only: [:index, :update, :destroy, :create]
       delete :cart_items, to: 'cart_items#destroy_all'
+      get "orders/complete" => "orders#complete"
+      post "orders/confirm" => "orders#confirm"
+    resources :items, only: [:index, :show]
+    resources :cart_items, only: [:index, :update, :destroy, :create]
     resources :orders, only: [:new, :index, :create, :show]
-      post "orders/confirm" => "public/orders#confirm"
-      get "ordes/complete" => "public/orders#complete"
       #get "addresses" => "public/addresses#index"
     resources :addresses, except: [:new, :show]
    end
