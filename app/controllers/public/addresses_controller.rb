@@ -13,22 +13,19 @@ class Public::AddressesController < ApplicationController
     @address = Address.new(address_params)
     @address.customer_id = current_customer.id
     @address.save
-    flash[:notice] = "You have created address successfully."
-    redirect_to addresses_path
+    redirect_to addresses_path, notice: "配送先を登録しました"
   end
 
   def update
     address = Address.find(params[:id])
     address.update(address_params)
-    redirect_to addresses_path
-    flash[:notice] = "You have updated address successfully."
+    redirect_to addresses_path, notice: "配送先を更新しました"
   end
 
   def destroy
     address = Address.find(params[:id])
     address.destroy
-    redirect_to addresses_path
-    flash[:notice] = "Address was successfully destroyed"
+    redirect_to addresses_path, notice: "配送先を削除しました" 
   end
 
   protected
