@@ -31,7 +31,24 @@
     </tr>
     <tr>
       <td>会員ステータス</td>
-      <td><%= @customer.is_deleted %></td>
+      <td>
+        <% if @customer.is_deleted == false %>
+          <span class="text-success">有効</span>
+        <% else %>
+          <span class="text-danger">退会</span>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <!--リンクパスの変更必要あり-->
+        <%= link_to "編集する", about_path, class:"btn btn-success" %>
+      </td>
+      <td>
+        <!--リンクパスの変更必要あり-->
+        <%= link_to "注文履歴一覧を見る", about_path, class:"btn btn-primary" %>
+      </td>
     </tr>
   </tbody>
 </table>
