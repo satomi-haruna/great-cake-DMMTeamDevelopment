@@ -1,17 +1,18 @@
 class Public::CustomersController < ApplicationController
+  protect_from_forgery
+
   def show
     @customer = current_customer
   end
 
   def edit
     @customer = current_customer
-    unless @customer == current_customer
-      redirect_to about_path
-    end
   end
 
   def update
     @customer = current_customer
+    # p current_customer
+    # p '目印です表示されてほしい'
     if @customer.update(customer_params)
       redirect_to customers_my_page_path
     else
@@ -22,8 +23,12 @@ class Public::CustomersController < ApplicationController
 
   private
 
+    def customer_params
+      params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :post_code, :address, :phone_number, :email, :is_deleted)
+    end
+
     def set_customer
-      @customer = Customer.find([:id])
+      @customer = Customer.find(params[:id])
       redirect_to customers_my_page_path
     end
 
