@@ -1,0 +1,13 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-8 offset-2'>
+      <h4 class="text-center my-4 mt-5", style="background-color: #eee; width:200px; padding-left: 12px;"><b>商品詳細</b></h4>
+      <div>
+        <%= image_tag @item.get_item_image %>
+        <p><%= @item.name %></p>
+        <p><%= @item.introduction %></p>
+        <p><%= @item.add_tax_price %>円（税込）</p>
+      </div>
+    </div>
+  </div>
+</div>
