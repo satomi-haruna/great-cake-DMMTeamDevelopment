@@ -78,7 +78,7 @@
             <td></td>
         <% end %>
 
-            <%= form_with model: @customer, url: about_path do |f| %>
+            <%= form_with model: @customer, url: customers_unsubscribe_path, method: :get do |f| %>
             <td>
               <%= f.submit "退会する", class:"btn btn-danger" %>
             </td>

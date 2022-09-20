@@ -20,6 +20,16 @@ class Public::CustomersController < ApplicationController
     end
   end
 
+  def unsubscribe
+  end
+
+  def withdraw
+    @customer = current_customer
+    @customer.update(is_deleted: true)
+    reset_session
+    redirect_to about_path
+  end
+
 
   private
 
