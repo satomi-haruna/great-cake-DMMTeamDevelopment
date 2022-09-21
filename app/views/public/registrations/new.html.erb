@@ -3,8 +3,9 @@
     <div class="col">
       <h3>新規会員登録</h3>
 
-      <table>
+
       <%= form_with model: @customer, url: customer_registration_path do |f| %>
+      <table>
         <%= render "public/shared/error_messages", resource: resource %>
 
         <tbody>
@@ -102,9 +103,8 @@
             <td></td>
           </tr>
         </tbody>
-      <% end %>
-
       </table>
+      <% end %>
 
 
       <h3>既に登録済みの方</h3>

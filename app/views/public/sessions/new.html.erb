@@ -5,8 +5,8 @@
       <h3>ログイン</h3>
       <h4>会員の方はこちらからログイン</h4>
 
-      <table>
       <%= form_with model: @customer, url: customer_session_path do |f| %>
+      <table>
         <tbody>
           <tr>
             <td class="field">
@@ -40,8 +40,8 @@
             </td>
           </tr>
         </tbody>
-      <% end %>
       </table>
+      <% end %>
 
       <h4>会員登録がお済みでない方</h4>
       <%= render "public/shared/links" %>　から新規登録を行ってください。
