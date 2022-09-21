@@ -13,7 +13,7 @@
 <!--ご自身の住所-->
   <%= f.radio_button :address, '1' %>
   <%= f.label :address, "ご自身の住所", value: 1 %>
-  <%= current_customer.customer_address %>
+  <%= current_customer.post_code %>
 
 <!--登録された住所-->
   <%= f.radio_button :address, '2' %>
@@ -23,7 +23,7 @@
 <!--新しいお届け先-->
   <%= f.radio_button :address, '3' %>
   <%= f.label :address, "新しいお届け先", value: 3 %>
-  <%= f.label :address, "郵便番号（ハイフンなし）"　%>
+
   <%= f.text_field :post_code %>
   <%= f.label :address, "住所" %>
   <%= f.text_field :address %>
