@@ -1,6 +1,6 @@
 class Public::CustomersController < ApplicationController
-  protect_from_forgery
 
+  protect_from_forgery
   def show
     @customer = current_customer
   end
