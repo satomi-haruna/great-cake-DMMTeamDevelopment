@@ -3,9 +3,9 @@
     <div class="col">
       <h3>会員情報編集</h3>
 
-      <table>
-        <%= form_with model: @customer, url: customers_infomation_path, method: :patch do |f| %>
-        <!--%= render "public/shared/error_messages", resource: resource %>-->
+      <%= form_with model: @customer, url: customers_infomation_path, method: :patch do |f| %>
+      <table class='table'>
+      <!--%= render "public/shared/error_messages", resource: resource %>-->
         <tbody>
           <tr>
             <td class="field">
@@ -36,7 +36,7 @@
               <%= f.label :"郵便番号" %>
             </td>
             <td>
-            <%= f.text_field :post_code %>
+              <%= f.text_field :post_code %>
             </td>
             <td></td>
             <td></td>
@@ -51,10 +51,10 @@
           </tr>
           <tr>
             <td class="field">
-            <%= f.label :"電話番号" %>
+              <%= f.label :"電話番号" %>
             </td>
             <td>
-            <%= f.text_field :phone_number %>
+              <%= f.text_field :phone_number %>
             </td>
             <td></td>
             <td></td>
@@ -76,17 +76,17 @@
               <%= f.submit "編集内容を保存", class:"btn btn-success" %>
             </td>
             <td></td>
-        <% end %>
-
-            <%= form_with model: @customer, url: customers_unsubscribe_path, method: :get do |f| %>
-            <td>
-              <%= f.submit "退会する", class:"btn btn-danger" %>
-            </td>
-            <% end %>
           </tr>
         </tbody>
-
       </table>
+      <% end %>
+
+      <div class='row'>
+        <%= form_with model: @customer, url: customers_unsubscribe_path, method: :get do |f| %>
+          <%= f.submit "退会する", class:"btn btn-danger" %>
+        <% end %>
+      </div>
+
     </div>
   </div>
 </div>
