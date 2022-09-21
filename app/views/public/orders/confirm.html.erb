@@ -9,15 +9,15 @@
       <th>小計</th>
     </tr>
   </thead>
-  
-  <% @cart_items.each do |cart| %> 
+
+  <% @cart_items.each do |cart| %>
   <tbody>
     <tr>
       <%= cart.item.name %>
-      <%= cart.item.with_tax_price.to_s(:delimited) %>
+      &yen;<%= cart.item.with_tax_price.to_s(:delimited) %>
       <%= cart.amount %>
-      <%= cart.subtotal.to_s(:delimited) %>
-      <% end %>  
+      &yen;<%= cart.subtotal.to_s(:delimited) %>
+      <% end %>
     </tr>
   </tbody>
 </table>
@@ -30,15 +30,15 @@
   <tbody>
     <tr>
       <th>送料</th>
-      <td><%= @postage.to_s(:delimited%) %></td>
+      <td>&yen;<%= @postage.to_s(:delimited%) %></td>
     </tr>
     <tr>
       <th>商品合計</th>
-      <td><%= @total.to_s(:delimited%) %></td>
+      <td>&yen;<%= @total.to_s(:delimited%) %></td>
     </tr>
     <tr>
       <th>請求金額</th>
-      <td><%= @total_payment.to_s(:delimited%) %></td>
+      <td>&yen;<%= @total_payment.to_s(:delimited%) %></td>
     </tr>
   </tbody>
 </table>
@@ -65,9 +65,9 @@
  <%= f.hidden_field :total_payment, :value => @total_payment %>
  <%= f.hidden_field :payment_method %>
  <%= f.hidden_field :status %>
- 
+
  <%= f.submit "注文を確定する", class="btn btn-primary" %>
 <% end %>
- 
+
 
 

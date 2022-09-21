@@ -19,15 +19,15 @@
 <table>
   <tr><th>商品合計</th>
   <% @order_subtotal = @order.total_payment - @order.postage %>
-  <td><%= @order_subtotal.to_s(:delimited) %></td>
+  <td>&yen;<%= @order_subtotal.to_s(:delimited) %></td>
   </tr>
   <tr>
     <th>配送料</th>
-    <td><%= @order.postage%></td>
+    <td>&yen;<%= @order.postage%></td>
   </tr>
   <tr>
     <th>ご請求額</th>
-    <td><%= @order.total_payment.to_s(:delimited) %></td>
+    <td>&yen;<%= @order.total_payment.to_s(:delimited) %></td>
   </tr>
 </table>
 
@@ -46,10 +46,10 @@
     <tr>
       <td><%= order_detail.item.name %></td>
       <!--税込のメソッド（itemモデルに記載）を使用-->
-      <td><%= order_detail.item.with_tax_price %></td>
+      <td>&yen;<%= order_detail.item.with_tax_price %></td>
       <td><%= order_detail.amount %></td>
       <!--小計のメソッド（order_detailモデルに記載）を使用-->
-      <td><%= order_detail.subtotal %></td>
+      <td>&yen;<%= order_detail.subtotal %></td>
     </tr>
   </tbody>
 <% end %>
