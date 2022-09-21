@@ -1,45 +1,51 @@
-<h3>マイページ</h3>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-8 offset-2'>
+      <h4 class="text-center my-4 mt-5", style="background-color: #eee; width:200px; padding-left: 12px;"><b>マイページ</b></h4>
 
-<h4>
-  登録情報
-  <%= link_to "編集する", about_path, class:"btn btn-success" %>
-</h4>
-<table border="1">
-  <tbody>
-    <tr>
-      <td>氏名</td>
-      <td><%= @customer.last_name %>　<%= @customer.first_name %></td>
-    </tr>
-    <tr>
-      <td>カナ</td>
-      <td><%= @customer.last_name_kana %>　<%= @customer.first_name_kana %></td>
-    </tr>
-    <tr>
-      <td>郵便番号</td>
-      <td><%= @customer.post_code %></td>
-    </tr>
-    <tr>
-      <td>住所</td>
-      <td><%= @customer.address %></td>
-    </tr>
-    <tr>
-      <td>電話番号</td>
-      <td><%= @customer.phone_number %></td>
-    </tr>
-    <tr>
-      <td>メールアドレス</td>
-      <td><%= @customer.email %></td>
-    </tr>
-  </tbody>
-</table>
+      <h4>
+        登録情報
+        <%= link_to "編集する", customers_infomation_edit_path, class:"btn btn-success" %>
+      </h4>
+      <table border="1">
+        <tbody>
+          <tr>
+            <td width="160">氏名</td>
+            <td width="400"><%= @customer.last_name %>　<%= @customer.first_name %></td>
+          </tr>
+          <tr>
+            <td>カナ</td>
+            <td><%= @customer.last_name_kana %>　<%= @customer.first_name_kana %></td>
+          </tr>
+          <tr>
+            <td>郵便番号</td>
+            <td><%= @customer.post_code %></td>
+          </tr>
+          <tr>
+            <td>住所</td>
+            <td><%= @customer.address %></td>
+          </tr>
+          <tr>
+            <td>電話番号</td>
+            <td><%= @customer.phone_number %></td>
+          </tr>
+          <tr>
+            <td>メールアドレス</td>
+            <td><%= @customer.email %></td>
+          </tr>
+        </tbody>
+      </table>
 
-<h4>
-  配送先
-  <!--リンクパスの変更必要あり-->
-  <%= link_to "一覧を見る", about_path, class:"btn btn-primary" %>
-</h4>
-<h4>
-  注文履歴
-  <!--リンクパスの変更必要あり-->
-  <%= link_to "一覧を見る", about_path, class:"btn btn-primary" %>
-</h4>
+      <h4>
+        配送先
+        <!--リンクパスの変更必要あり-->
+        <%= link_to "一覧を見る", about_path, class:"btn btn-primary" %>
+      </h4>
+      <h4>
+        注文履歴
+        <!--リンクパスの変更必要あり-->
+        <%= link_to "一覧を見る", about_path, class:"btn btn-primary" %>
+      </h4>
+    </div>
+  </div>
+</div>

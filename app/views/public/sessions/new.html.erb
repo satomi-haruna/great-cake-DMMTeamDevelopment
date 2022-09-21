@@ -1,34 +1,51 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h3>ログイン</h3>
-      <h4>会員の方はこちらからログイン</h4>
+<div class='container'>
+  <div class='row'>
+    <div class='offset-1 col-md-10'>
+      <h4 class="text-center", style="background-color: #eee; width:200px; margin:0 50px 50px;"><b>ログイン</b></h4>
+      <h5 class="text-center", style="background-color: #eee; width:350px">会員の方はこちらからログイン</h5>
 
       <%= form_with model: @customer, url: customer_session_path do |f| %>
-        <div class="field">
-          <%= f.label :"メールアドレス" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+      <table class='table'>
+        <tbody>
+          <tr>
+            <td class="field", height="50px">
+              <%= f.label :"メールアドレス" %>
+            </td>
+            <td>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com" %>
+            </td>
+          </tr>
 
-        <div class="field">
-          <%= f.label :"パスワード" %>
-          <%= f.password_field :password, autocomplete: "current-password" %>
-        </div>
+          <tr>
+            <td class="field", height="50px">
+              <%= f.label :"パスワード" %>
+            </td>
+            <td>
+              <%= f.password_field :password, autocomplete: "current-password" %>
+            </td>
+          </tr>
 
-        <!--<% if devise_mapping.rememberable? %>-->
-        <!--  <div class="field">-->
-        <!--    <%= f.check_box :remember_me %>-->
-        <!--    <%= f.label :remember_me %>-->
-        <!--  </div>-->
-        <!--<% end %>-->
+            <!--<% if devise_mapping.rememberable? %>-->
+            <!--  <div class="field">-->
+            <!--    <%= f.check_box :remember_me %>-->
+            <!--    <%= f.label :remember_me %>-->
+            <!--  </div>-->
+            <!--<% end %>-->
 
-        <div class="actions">
-          <%= f.submit "ログイン", class:"btn btn-primary" %>
-        </div>
+          <tr>
+            <td></td>
+            <td class="actions">
+              <%= f.submit "ログイン", class:"btn btn-primary  btn-block" %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <% end %>
 
-      <h4>会員登録がお済みでない方</h4>
-      <%= render "public/shared/links" %>　から新規登録を行ってください。
+      <h5 class="text-center", style="background-color: #eee; width:300px; margin:50px 20px 30px;">会員登録がお済みでない方</h5>
+      <dev class="ml-5">
+        <%= render "public/shared/links" %>　から新規登録を行ってください。
+      </div>
     </div>
   </div>
 </div>
