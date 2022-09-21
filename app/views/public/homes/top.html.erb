@@ -33,19 +33,22 @@
  </div>
 </div>
 
-<div class="row">
-<div class="col-md-12 d-flex">
+
+<div class="col-md-3">
 
  <% @items.first(4).each do |item| %>
 
+<div class="d-flex align-items-end">
   <%= link_to item_path(item.id) do %>
-   <%= image_tag item.image, class:"***" %>
+   <%= image_tag item.image, size:"200x150" %>
+   <% end %>
    <%= item.name %>
-   <%= item.price %>
-  <% end %>
+   &yen;<%= item.price %>
+ 
  <% end %>
+ </div>   
 </div>
-</div>
+
 
 <div class="row">
  <div class="col-md-2 offset-md-5 mt-3 text-nowrap">
