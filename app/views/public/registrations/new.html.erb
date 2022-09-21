@@ -3,59 +3,108 @@
     <div class="col">
       <h3>新規会員登録</h3>
 
+      <table>
       <%= form_with model: @customer, url: customer_registration_path do |f| %>
         <%= render "public/shared/error_messages", resource: resource %>
 
-        <!--項目追加-->
-        <div class="field">
-          <%= f.label :"名前" %>
-          (姓)<%= f.text_field :last_name, autofocus: true %>
-          (名)<%= f.text_field :first_name %>
-        </div>
+        <tbody>
+          <tr>
+            <!--項目追加-->
+            <td class="field">
+              <%= f.label :"名前" %>
+            </td>
+            <td>
+              (姓)<%= f.text_field :last_name, autofocus: true %>
+            </td>
+            <td>
+              (名)<%= f.text_field :first_name %>
+            </td>
+          </tr>
 
-        <div class="field">
-          <%= f.label :"フリガナ" %>
-          (セイ)<%= f.text_field :last_name_kana %>
-          (メイ)<%= f.text_field :first_name_kana %>
-        </div>
+          <tr>
+            <td class="field">
+              <%= f.label :"フリガナ" %>
+            </td>
+            <td>
+              (セイ)<%= f.text_field :last_name_kana %>
+            </td>
+            <td>
+              (メイ)<%= f.text_field :first_name_kana %>
+            </td>
+          </tr>
 
-        <div class="field">
-          <%= f.label :"メールアドレス" %>
-          <%= f.email_field :email, autocomplete: "email" %>
-        </div>
+          <tr>
+            <td class="field">
+              <%= f.label :"メールアドレス" %>
+            </td>
+            <td>
+              <%= f.email_field :email, autocomplete: "email" %>
+            </td>
+            <td></td>
+          </tr>
 
-        <div class="field">
-          <%= f.label :"郵便番号(ハイフンなし)" %>
-          <%= f.text_field :post_code %>
-        </div>
+          <tr>
+            <td class="field">
+              <%= f.label :"郵便番号(ハイフンなし)" %>
+            </td>
+            <td>
+              <%= f.text_field :post_code %>
+            </td>
+            <td></td>
+          </tr>
 
-        <div class="field">
-          <%= f.label :"住所" %>
-          <%= f.text_field :address %>
-        </div>
+          <tr>
+            <td class="field">
+              <%= f.label :"住所" %>
+            </td>
+            <td colspan="2">
+              <%= f.text_field :address %>
+            </td>
+          </tr>
 
-        <div class="field">
-          <%= f.label :"電話番号(ハイフンなし)" %>
-          <%= f.text_field :phone_number %>
-        </div>
+          <tr>
+            <td class="field">
+              <%= f.label :"電話番号(ハイフンなし)" %>
+            </td>
+            <td>
+              <%= f.text_field :phone_number %>
+            </td>
+            <td></td>
+          </tr>
 
-        <div class="field">
-          <%= f.label :"パスワード" %>
-          <% if @minimum_password_length %>
-          (<%= @minimum_password_length %>文字以上)
-          <% end %>
-          <%= f.password_field :password, autocomplete: "new-password" %>
-        </div>
+          <tr>
+            <td class="field">
+              <%= f.label :"パスワード" %>
+              <% if @minimum_password_length %>
+              (<%= @minimum_password_length %>文字以上)
+              <% end %>
+            </td>
+            <td>
+              <%= f.password_field :password, autocomplete: "new-password" %>
+            </td>
+            <td></td>
+          </tr>
 
-        <div class="field">
-          <%= f.label :"パスワード(確認用)" %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        </div>
+           <tr>
+            <td class="field">
+              <%= f.label :"パスワード(確認用)" %>
+            </td>
+            <td>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            </td>
+          </tr>
 
-        <div class="actions">
-      　  <%= f.submit "新規登録", class:"btn btn-success" %>
-        </div>
+          <tr>
+            <td></td>
+            <td class="actions">
+          　  <%= f.submit "新規登録", class:"btn btn-success" %>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
       <% end %>
+
+      </table>
 
 
       <h3>既に登録済みの方</h3>
