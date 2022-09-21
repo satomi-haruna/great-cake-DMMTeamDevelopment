@@ -1,24 +1,23 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <%= flash[:notice] %>
-      <h3>ログイン</h3>
-      <h4>会員の方はこちらからログイン</h4>
+<div class='container'>
+  <div class='row'>
+    <div class='offset-1 col-md-10'>
+      <h4 class="text-center", style="background-color: #eee; width:200px; margin:0 50px 50px;"><b>ログイン</b></h4>
+      <h5 class="text-center", style="background-color: #eee; width:350px">会員の方はこちらからログイン</h5>
 
       <%= form_with model: @customer, url: customer_session_path do |f| %>
-      <table>
+      <table class='table'>
         <tbody>
           <tr>
-            <td class="field">
+            <td class="field", height="50px">
               <%= f.label :"メールアドレス" %>
             </td>
             <td>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com" %>
             </td>
           </tr>
 
           <tr>
-            <td class="field">
+            <td class="field", height="50px">
               <%= f.label :"パスワード" %>
             </td>
             <td>
@@ -36,15 +35,17 @@
           <tr>
             <td></td>
             <td class="actions">
-              <%= f.submit "ログイン", class:"btn btn-primary" %>
+              <%= f.submit "ログイン", class:"btn btn-primary  btn-block" %>
             </td>
           </tr>
         </tbody>
       </table>
       <% end %>
 
-      <h4>会員登録がお済みでない方</h4>
-      <%= render "public/shared/links" %>　から新規登録を行ってください。
+      <h5 class="text-center", style="background-color: #eee; width:300px; margin:50px 20px 30px;">会員登録がお済みでない方</h5>
+      <dev class="ml-5">
+        <%= render "public/shared/links" %>　から新規登録を行ってください。
+      </div>
     </div>
   </div>
 </div>
