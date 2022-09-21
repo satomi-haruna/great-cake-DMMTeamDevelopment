@@ -1,0 +1,25 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-8 offset-2'>
+      <h4 class="text-center my-4 mt-5", style="background-color: #eee; width:200px; padding-left: 12px;"><b>商品詳細</b></h4>
+      <div>
+        <%= image_tag @item.get_item_image %>
+        <p><%= @item.name %></p>
+        <p><%= @item.introduction %></p>
+        <p><%= @item.add_tax_price %>円（税込）</p>
+      </div>
+      <div class='row'>
+        <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
+        <!--カート内商品を追加するためのフォームです-->
+          <%= f.select :amount, *[1..10], include_blank: "個数選択" %>
+          <!--cart_itemモデルにquantityを渡すためのフォームです-->
+          <%= f.hidden_field :item_id, :value => @item.id %>
+          <!--cart_itemモデルにitem_idを渡すためのフィームです、カスタマーには表示されません-->
+          <%= f.hidden_field :customer_id, :value => current_customer.id %>
+          <!--cart_itemモデルにcustomer_idを渡すための-->
+          <%= f.submit "カートに入れる", class: "btn btn-sm btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

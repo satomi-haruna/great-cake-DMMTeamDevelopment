@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   has_one_attached :image
   belongs_to :genre
+  has_many :cart_items, dependent: :destroy
 
   validates :name, presence: :true
   validates :introduction, presence: :true
@@ -20,5 +21,7 @@ class Item < ApplicationRecord
     (self.price * 1.1).round
     #itemモデルのpriceに税率をかける
   end
+
+  
 
 end
