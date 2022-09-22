@@ -26,18 +26,12 @@
         </td>
         <td class="align-middle">
          <table class="table-sm table-borderless">
-         <% order.order_detail.each do |order_detail| %>
-         <tbody>
-          <tr>
-           <td><%= order_detail.item.name %></td>
-          </tr>
-         </tbody>
-         <% end %>
+        >
          </table>
          </td>
          <td class="align-middle">&yen;<%= order.total_payment.to_s(:delimited) %></td>
          <td class="align-middle"><%= order.status_i18n %></td>
-         <td class="align-middle"><%= link_to "表示する", order_path(@order), class: "btn btn-primary" %></td>
+         <td class="align-middle"><%= link_to "表示する", order_path(order), class: "btn btn-primary" %></td>
       </tr>
      </tbody>
     <% end %>
