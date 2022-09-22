@@ -7,15 +7,28 @@ class Public::OrdersController < ApplicationController
   def confirm
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
-    @address = Address.find(params[:order][:address_id])
-    @order.post_code = @address.post_code
-    @order.address = @address.address
-    @order.name = @address.name
     @cart_items = current_customer.cart_items
     @postage = 800
     @total = 0
     @total_payment = 0
-    #binding.pry #デバッグ用（後で消去）
+    @order.payment_method = params[:order][:payment_method]
+
+    if params[:select_address] == "0"
+     @order.post_code = current_customer.post_code
+     @order.address = current_customer.address
+     @order.name = current_customer.first_name + current_customer.last_name
+
+    elsif params[:select_address] == "1"
+     @address = Address.find(params[:address_id])
+     @order.post_code = @address.post_code
+     @order.address = @address.address
+     @order.name = @address.name
+
+    elsif params[:select_address] == "2"
+     @order.post_code = params[:order][:post_code]
+     @order.address = params[:order][:address]
+     @order.name = params[:order][:name]
+    end
   end
 
   def complete
