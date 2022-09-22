@@ -1,10 +1,18 @@
-<div class='container'>
-  <div class='row'>
-    <h2>カート内商品index</h2>
+<div class="container">
+  <div class="row">
+    <div class='offset-1 col'>
+      <!--bootstrapの入れ子構造-->
+      <div class="row">
+        <div class="col-lg-1 col-md-1">
+          <h4 class="text-center mt-4 mb-4", style="background-color: #eee; width:250px;"><b>ショッピングカート</b></h2>
+        </div>
 
-    <%= link_to '/cart_items', method: :delete do %>
-      <button type="button" class="btn btn-danger">カートを空にする</button>
-    <% end %>
+        <div class="offset-lg-8 offset-md-7 col">
+          <%= link_to '/cart_items', method: :delete do %>
+            <button type="button" class="btn btn-danger mt-4 mb-4">カートを空にする</button>
+          <% end %>
+        </div>
+      </div>
 
     <table class='table'>
       <thead>
