@@ -12,7 +12,7 @@
               <%= f.label :"メールアドレス" %>
             </td>
             <td>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", :size => "40" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", :size => "40", class:"form-control" %>
             </td>
           </tr>
 
@@ -21,7 +21,7 @@
               <%= f.label :"パスワード" %>
             </td>
             <td>
-              <%= f.password_field :password, autocomplete: "current-password", :size => "40" %>
+              <%= f.password_field :password, autocomplete: "current-password", :size => "40", class:"form-control" %>
             </td>
           </tr>
 
