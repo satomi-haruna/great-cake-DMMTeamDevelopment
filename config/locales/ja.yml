@@ -2,5 +2,23 @@ ja: # 日本語の設定を行う
  enums: # enumの設定を行う
   order: # [モデル名] (Orderモデルに対して)
    payment_method: # [カラム名] (payment_methodカラムに対して)
-    credit_card: "クレジットカード" # [enumで番号と紐つけた要素]　
+    credit_card: "クレジットカード" # [enumで番号と紐つけた要素]
     transfer: "銀行振込" # [enumで番号と紐つけた要素] 要素の数だけ追加する
+
+   status:
+    waiting_for_payment: "入金待ち"
+    payment_confirmation: "入金確認"
+    in_making: "製作中"
+    yet_sent: "発送準備中"
+    sent: "発送済み"
+
+  order_detail:
+   making_status:
+     cannot_start: "着手不可"
+     waiting_for_making: "製作待ち"
+     in_making: "製作中"
+     complete_making: "製作完了"
+     
+ # 他のファイルではインデントが違っても表示されますが、
+ # ja.ymlファイルでは1つでもインデントが違うと読み込まれません。
+ # ディレクトリの階層ごとにちゃんとインデントがされてるかチェックしてください。

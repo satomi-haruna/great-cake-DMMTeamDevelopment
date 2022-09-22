@@ -60,7 +60,7 @@
               <th class="table table-active">小計</th>
             </tr>
           </thead>
-          <% @order.order_detail.each do |order_detail| %>
+          <% @order.order_details.each do |order_detail| %>
           <tbody>
             <tr>
               <td><%= order_detail.item.name %></td>
@@ -68,7 +68,7 @@
               <td>&yen;<%= order_detail.item.add_tax_price %></td>
               <td><%= order_detail.amount %></td>
               <!--小計のメソッド（order_detailモデルに記載）を使用-->
-              <td>&yen;<%= order_detail.subtotal %></td>
+              <td>&yen;<%= order_detail.sub_total %></td>
             </tr>
           </tbody>
         <% end %>

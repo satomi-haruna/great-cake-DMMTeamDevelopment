@@ -26,7 +26,13 @@
         </td>
         <td class="align-middle">
          <table class="table-sm table-borderless">
-        
+         <% order.order_details.each do |order_detail| %>
+          <tbody>
+            <tr>
+             <td><%= order_detail.item.name %></td>
+            </tr>
+          </tbody>
+          <% end %>
          </table>
          </td>
          <td class="align-middle">&yen;<%= order.total_payment.to_s(:delimited) %></td>
