@@ -12,10 +12,10 @@
               <%= f.label :"氏名" %>
             </td>
             <td>
-              <%= f.text_field :last_name, autofocus: true, style: "width:85%" %>
+              <%= f.text_field :last_name, autofocus: true, style: "width:85%", class:"form-control" %>
             </td>
             <td>
-              <%= f.text_field :first_name, style: "width:85%" %>
+              <%= f.text_field :first_name, style: "width:85%", class:"form-control" %>
             </td>
             <td></td>
           </tr>
@@ -24,10 +24,10 @@
               <%= f.label :"フリガナ" %>
             </td>
             <td>
-              <%= f.text_field :last_name_kana, style: "width:85%" %>
+              <%= f.text_field :last_name_kana, style: "width:85%", class:"form-control" %>
             </td>
             <td>
-              <%= f.text_field :first_name_kana, style: "width:85%" %>
+              <%= f.text_field :first_name_kana, style: "width:85%", class:"form-control" %>
             </td>
             <td></td>
           </tr>
@@ -36,7 +36,7 @@
               <%= f.label :"郵便番号" %>
             </td>
             <td>
-              <%= f.text_field :post_code, style: "width:85%" %>
+              <%= f.text_field :post_code, style: "width:85%", class:"form-control" %>
             </td>
             <td></td>
             <td></td>
@@ -46,7 +46,7 @@
               <%= f.label :"住所" %>
             </td>
             <td colspan="3">
-              <%= f.text_field :address, style: "width:100%" %>
+              <%= f.text_field :address, style: "width:100%", class:"form-control" %>
             </td>
           </tr>
           <tr>
@@ -54,7 +54,7 @@
               <%= f.label :"電話番号" %>
             </td>
             <td>
-              <%= f.text_field :phone_number, style: "width:85%" %>
+              <%= f.text_field :phone_number, style: "width:85%", class:"form-control" %>
             </td>
             <td></td>
             <td></td>
@@ -64,7 +64,7 @@
               <%= f.label :"メールアドレス" %>
             </td>
             <td>
-              <%= f.email_field :email, autocomplete: "email", style: "width:85%" %>
+              <%= f.email_field :email, autocomplete: "email", style: "width:85%", class:"form-control" %>
             </td>
             <td></td>
             <td></td>
