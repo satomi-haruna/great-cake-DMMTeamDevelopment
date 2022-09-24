@@ -18,7 +18,15 @@ ja: # 日本語の設定を行う
      waiting_for_making: "製作待ち"
      in_making: "製作中"
      complete_making: "製作完了"
-     
+
+ views:
+  pagination:
+   first: <i class="fas fa-angle-double-left"></i>
+   last: <i class="fas fa-angle-double-right"></i>
+   previous: <i class="fas fa-angle-left"></i>
+   next: <i class="fas fa-angle-right"></i>
+   truncate: "..."
+
  # 他のファイルではインデントが違っても表示されますが、
  # ja.ymlファイルでは1つでもインデントが違うと読み込まれません。
  # ディレクトリの階層ごとにちゃんとインデントがされてるかチェックしてください。
