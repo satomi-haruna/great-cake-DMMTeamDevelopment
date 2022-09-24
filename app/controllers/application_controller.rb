@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     request.path.include?("/public")
   end
 
-  
+
   protected
 
   def configure_permitted_parameters
