@@ -1,4 +1,7 @@
 class Public::OrdersController < ApplicationController
+  before_action :authenticate_customer!
+  
+  layout "pu"
 
   def new
     @order = Order.new
