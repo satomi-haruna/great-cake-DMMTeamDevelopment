@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :index, :create, :show]
       #get "addresses" => "public/addresses#index"
     resources :addresses, except: [:new, :show]
+    get 'search', to: 'searches#search'
   end
 
 

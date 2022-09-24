@@ -1,0 +1,7 @@
+<% if @model == 'item' %>
+ <h3>Items search for "<%= @content %>"</h3>
+<%= render 'public/items/index', items: @records %>
+<% elsif @model == 'genre' %>
+ <h3>Genres search for "<%= @content %>"</h3>
+<%= render 'admin/genres/index', genres: @records %>
+<% end %>

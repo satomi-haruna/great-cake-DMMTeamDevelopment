@@ -1,0 +1,17 @@
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th colspam="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% items.each do |item| %>
+     <tr>
+       <td><%= image_tag item.get_item_image, size: '50x50' %></td>
+       <td><%= item.name %></td>
+     </tr>
+     <% end %>
+  </tbody>
+</table>

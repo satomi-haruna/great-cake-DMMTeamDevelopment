@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>NaganoCake</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://kit.fontawesome.com/7af3bdf8d7.js" crossorigin="anonymous"></script>
-  </head>
-
-  <body>
-    <header class="sticky-top">
+ <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
           <a class="navbar-brand text-light" href="/"><span>NaganoCake</span></a>
@@ -22,32 +8,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-              <% if customer_signed_in? %>
-                <li class="text-light mx-lg-5 my-2">
-                  ようこそ、<%= current_customer.last_name %>さん！
-                </li>
-                <li>
-                  <%= link_to customers_my_page_path, class: 'nav-link text-light' do %>
-                    <i class="fas fa-home"></i> マイページ
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to items_path, class: 'nav-link text-light' do %>
-                    <i class="fas fa-users"></i> 商品一覧
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to cart_items_path, class:'nav-link text-light' do %>
-                    <i class="fas fa-book-open"></i> カート
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to destroy_customer_session_path, method: :delete, class:'nav-link text-light' do %>
-                    <i class="fas fa-sign-out-alt"></i> ログアウト
-                  <% end %>
-                </li>
-
-              <% elsif admin_signed_in? %>
+              <% if admin_signed_in? %>
                 <li>
                   <%= link_to admin_items_path, class: 'nav-link text-light' do %>
                     <i class="fas fa-home"></i> 商品一覧
@@ -93,33 +54,8 @@
                     <i class="fas fa-sign-in-alt"></i> ログイン
                   <% end %>
                 </li>
-                <li>
-                  <%= link_to new_admin_session_path,class: 'nav-link text-light' do %>
-                    <i class="fas fa-sign-in-alt"></i> 管理者ログイン
-                  <% end %>
-                </li>
               <% end %>
             </ul>
           </div>
         </div>
-      </nav>
-      <!--検索窓-->
-     <%= render 'public/searches/form' %>
     </header>
-
-    <main>
-      <%= yield %>
-    </main>
-
-    <footer>
-      <div class="container mt-5">
-        <div class="row ">
-          <div class="mx-auto ">
-            <p>NaganoCake</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-  </body>
-</html>

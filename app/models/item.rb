@@ -22,7 +22,20 @@ class Item < ApplicationRecord
     (self.price * 1.1).round
     #itemモデルのpriceに税率をかける
   end
+  
+  def self.search_for(content, method)
+    if method == 'perfect'
+      Item.where(name: content)
+    elsif method == 'forward'
+      Item.where('name LIKE ?', content + '%')
+    elsif method == 'backward'
+      Item.where('name lIKE ?', '%' + content)
+    else 
+      Item.where('name LIKE ?', '%' + content + '%')
+    end
+  end
+end
 
   
 
-end
+
