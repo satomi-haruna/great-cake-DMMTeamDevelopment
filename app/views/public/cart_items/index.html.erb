@@ -52,10 +52,17 @@
       </tbody>
     </table>
 
+<<<<<<< HEAD
     <div class="row">
       <div class="col mt-3">
         <%= link_to items_path do %>
           <button type="button" class="btn btn-primary px-4">買い物を続ける</button>
+=======
+    <div>
+      <div>
+        <%= link_to root_path do %>
+          <button type="button" class="btn btn-primary">買い物を続ける</button>
+>>>>>>> origin/develop
         <% end %>
       </div>
       <div class="col-4">
@@ -70,12 +77,14 @@
         </table>
       </div>
     </div>
-
-    <div>
-      <div>
+    <div class="row justify-content-center">
+      <% if @total > 0 %>
         <%= link_to new_order_path do %>
-          <button type="button" class="btn btn-success px-4">情報入力に進む</button>
+        <button type="button" class="btn btn-success">情報入力に進む</button>
         <% end %>
+      <% else %>
+        <span>商品を追加してください</span>
+      <% end %>
     </div>
   </div>
 </div>
