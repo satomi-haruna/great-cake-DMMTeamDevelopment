@@ -1,35 +1,35 @@
 <div class='container'>
-  <div class='row'>
-    <div class='col-lg-6 col-md-6'>
-      <h2>ジャンル一覧・追加</h2>
-      <%= form_with model: @new_genre, url: admin_genres_path, method: :post do |f| %>
-      <!--@genreでGenre.newを呼び出して新規登録フォームを作成する-->
-        <label>ジャンル名</label>
-        <%= f.text_field :name %>
-        <%= f.submit "新規登録", class: "btn btn-sm btn-success" %>
+  <div class='col-md-6'>
+    <h4 class="text-center my-4 mt-5", style="background-color: #eee; padding-left: 12px;"><b>ジャンル一覧・追加</b></h4>
+    <%= form_with model: @new_genre, url: admin_genres_path, method: :post do |f| %>
+    <table class='table table-borderless'>
+      <tbody>
+        <th>ジャンル名</th>
+        <td><%= f.text_field :name, class: 'form-control' %></td>
+        <td><%= f.submit "新規登録", class: "btn btn-sm btn-success" %></td>
+      </tbody>
+    </table>
+    <% end %>
+    
+    <% if flash %>
+      <%= flash[:notice] %>
+    <% end %>
+    
+    <table class="table">
+      <thead style="background-color: #f5f5f5;">
+        <tr>
+          <th colspan='2'>ジャンル</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @genres.each do |genre| %>
+        <tr>
+          <td><%= genre.name %></td>
+          <td><%= link_to "編集する", edit_admin_genre_path(genre.id), class: "btn btn-sm btn-success" %></td>
+        </tr>
       <% end %>
-
-      <p id="notice">
-       <%=  notice %>
-      </p>
-
-      <table class="table">
-        <thead>
-          <tr>
-            <th>ジャンル</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @genres.each do |genre| %>
-          <tr>
-            <td><%= genre.name %></td>
-            <td><%= link_to "編集する", edit_admin_genre_path(genre.id), class: "btn btn-sm btn-success" %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <%= paginate @genres %>
-    </div>
+      </tbody>
+    </table>
+    <%= paginate @genres %>
   </div>
 </div>

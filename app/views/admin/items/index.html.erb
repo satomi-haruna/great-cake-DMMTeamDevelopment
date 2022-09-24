@@ -11,9 +11,9 @@
   </div>
   <div class='row'>
     <div class='col-md-8 offset-2'>
-      <table class='table'>
+      <table class='table table-hover'>
         <thead>
-          <tr>
+          <tr style="background-color: #f5f5f5;">
             <th>商品ID</th>
             <th>商品名</th>
             <th>税抜価格</th>
@@ -32,11 +32,10 @@
             </td>
             <td><%= item.price %>円</td>
             <td><%= item.genre.name %></td>
-            <td>
               <% if item.is_active == true %>
-                <span>販売中</span>
+                <td class="text-success">販売中</td>
               <% else %>
-                <span>販売停止中</span>
+                <td class="text-danger">販売停止中</td>
               <% end %>
             </td>
           </tr>
