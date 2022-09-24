@@ -1,4 +1,7 @@
 class Public::ItemsController < ApplicationController
+  before_action :authenticate_customer!
+  
+  layout "public_application"
 
   def index
     @items = Item.all
