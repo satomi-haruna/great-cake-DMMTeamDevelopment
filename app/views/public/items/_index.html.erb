@@ -9,7 +9,7 @@
   <tbody>
     <% items.each do |item| %>
      <tr>
-       <td><%= image_tag item.get_item_image, size: '50x50' %></td>
+       <td><%= item.image_id %></td>
        <td><%= item.name %></td>
      </tr>
      <% end %>
