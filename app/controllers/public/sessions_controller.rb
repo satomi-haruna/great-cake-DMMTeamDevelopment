@@ -4,6 +4,7 @@ class Public::SessionsController < Devise::SessionsController
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :reject_customer, only: [:create]
   # before_action :configure_sign_in_params, only: [:create]
+  layout "public_application"
 
   # GET /resource/sign_in
   # def new
@@ -28,7 +29,7 @@ class Public::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(resource)
-    about_path
+    customers_my_page_path
   end
 
   def after_sign_out_path_for(resource)
