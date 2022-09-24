@@ -4,6 +4,7 @@ class Public::SessionsController < Devise::SessionsController
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :reject_customer, only: [:create]
   # before_action :configure_sign_in_params, only: [:create]
+  layout "public_application"
 
   # GET /resource/sign_in
   # def new

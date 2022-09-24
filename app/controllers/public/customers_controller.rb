@@ -1,6 +1,10 @@
 class Public::CustomersController < ApplicationController
+  before_action :authenticate_customer!
+  # layoutsのpublic_applicationを読み込む
+   layout "public_application" 
 
   protect_from_forgery
+  
   def show
     @customer = current_customer
   end

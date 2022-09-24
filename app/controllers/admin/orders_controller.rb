@@ -1,5 +1,8 @@
 class Admin::OrdersController < ApplicationController
-  
+  before_action :authenticate_admin!
+
+  layout "admin_application"
+
   def index
     @orders = Order.all
   end
@@ -22,9 +25,9 @@ class Admin::OrdersController < ApplicationController
     end
    redirect_to admin_order_path(@order.id)
   end
-  
+
   protected
-  
+
   def order_params
     params.require(:order).permit( :status)
   end

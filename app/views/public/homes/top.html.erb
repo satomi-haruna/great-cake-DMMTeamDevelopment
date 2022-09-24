@@ -38,9 +38,9 @@
        <div class="card">
       <!--<div class="d-flex align-items-end">-->
         <%= link_to item_path(item.id) do %>
-         <%= image_tag item.image.variant( resize: "150" ) %>
+         <%= image_tag item.image.variant( resize: "150" ) %><br>
         <% end %>
-        <%= item.name %>
+        <%= item.name %><br>
         &yen;<%= item.price %>
 
       <% end %>
