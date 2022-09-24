@@ -1,10 +1,10 @@
 class Admin::GenresController < ApplicationController
   before_action :authenticate_admin!
-  
+
   layout "admin_application"
 
   def index
-    @genres = Genre.all
+    @genres = Genre.all.page(params[:page]).per(10)
     #登録されている全てのジャンルを呼び出す
     @new_genre = Genre.new
     #index画面で新規ジャンルを登録する

@@ -8,8 +8,8 @@
       <th>ステータス</th>
     </tr>
   </thead>
+  <% @customer.each do |customer| %>
   <tbody>
-    <% @customer.each do |customer| %>
     <tr>
       <td><%= customer.id %></td>
       <td>
@@ -26,6 +26,7 @@
         <% end %>
       </td>
     </tr>
-    <% end %>
   </tbody>
+  <% end %>
 </table>
+<%= paginate @customer %>

@@ -2,9 +2,9 @@ class Admin::CustomersController < ApplicationController
   before_action :authenticate_admin!
   # layoutsのadmin_applicationを読み込む
   layout "admin_application"
-  
+
   def index
-    @customer = Customer.all
+    @customer = Customer.all.page(params[:page]).per(10)
   end
 
   def show

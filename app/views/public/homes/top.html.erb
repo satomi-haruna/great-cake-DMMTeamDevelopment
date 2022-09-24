@@ -41,12 +41,12 @@
 <div class="d-flex align-items-end">
   <%= link_to item_path(item.id) do %>
    <%= image_tag item.image, size:"200x150" %>
-   <% end %>
-   <%= item.name %>
+   <% end %><br>
+   <%= item.name %><br>
    &yen;<%= item.price %>
- 
+
  <% end %>
- </div>   
+ </div>
 </div>
 
 
