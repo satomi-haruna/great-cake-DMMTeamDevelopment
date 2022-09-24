@@ -1,6 +1,10 @@
 class Public::CustomersController < ApplicationController
+  before_action :authenticate_customer!
+  # layoutsのpublic_applicationを読み込む
+   layout "public_application" 
 
   protect_from_forgery
+  
   def show
     @customer = current_customer
   end
@@ -27,7 +31,7 @@ class Public::CustomersController < ApplicationController
     @customer = current_customer
     @customer.update(is_deleted: true)
     reset_session
-    redirect_to about_path
+    redirect_to root_path
   end
 
 
