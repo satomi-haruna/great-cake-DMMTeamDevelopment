@@ -1,10 +1,11 @@
-<header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark", style="background-color: #ff9393;">
         <div class="container">
-          <a class="navbar-brand text-light" href="/">
-            <%= image_tag 'NAGANO CAKE.png', size:"50x50", style: "position:relative;" %>
-            <span>NaganoCake</span></a>
-          <div class="text-light">
+          <a class="navbar-brand text-light " href="/">
+            <%= image_tag 'NAGANO CAKE4.png', size:"50x50", style: "position:relative; border-radius: 50%;" %>
+            <!--<span>NaganoCake</span>-->
+          </a>
+          <div class="text-light ml-md-2 ml-lg-5">
             <% if customer_signed_in? %>
              ようこそ、<%= current_customer.last_name %>さん!
             <% end %>
@@ -23,12 +24,12 @@
                 </li>
                 <li>
                   <%= link_to items_path, class: 'nav-link text-light' do %>
-                    <i class="fas fa-users"></i> 商品一覧
+                    <i class="fa-solid fa-cake-candles"></i> 商品一覧
                   <% end %>
                 </li>
                 <li>
                   <%= link_to cart_items_path, class:'nav-link text-light' do %>
-                    <i class="fas fa-book-open"></i> カート
+                    <i class="fa-solid fa-bag-shopping"></i> カート
                   <% end %>
                 </li>
                 <li>
@@ -60,4 +61,5 @@
             </ul>
           </div>
         </div>
-      </header>
+      </nav>
+    </header>
