@@ -1,4 +1,9 @@
 <h1>管理者トップページ（注文履歴一覧）</h1>
+
+<% if flash %>
+  <%= flash[:notice] %>
+<% end %>
+
 <div class='container'>
   <div class='row'>
     <div class='col-md-8 offset-2'>

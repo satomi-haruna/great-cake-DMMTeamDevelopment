@@ -2,20 +2,20 @@
 
 <div class="container">
   <div class="row">
-  
+
 <div class="col-md-6">
     <strong>注文情報</strong>
       <table class="table table-bordered">
         <tr>
           <th class="table-active">注文日</th>
-           <td><%= @order.created_at.to_date %></td>
+          <td><%= @order.created_at.to_date %></td>
         </tr>
         <tr>
-         <th class="table-active">配送先</th>
+          <th class="table-active">配送先</th>
           <td>
-            <%= @order.post_code %></br>
-            <%= @order.address %></br>
-            <%= @order.name %>
+              <%= @order.post_code %></br>
+              <%= @order.address %></br>
+              <%= @order.name %>
           </td>
         </tr>
         <tr>
@@ -28,7 +28,7 @@
         </tr>
       </table>
   </div>
-  
+
   <div class="col-md-3">
     <strong>請求内容</strong>
     <table class-"table table-bordered">
@@ -47,7 +47,7 @@
       </tr>
     </table>
   </div>
-  
+
   <div class="row">
     <div class="col-md-6">
       <strong>注文内容</strong>
@@ -75,6 +75,6 @@
       </table>
     </div>
   </div>
- 
+
  </div>
 </div>
