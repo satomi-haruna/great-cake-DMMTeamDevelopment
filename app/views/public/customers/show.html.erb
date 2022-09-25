@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='row'>
     <div class='col-lg-8 offset-lg-2'>
-      <h4 class="text-center my-5 mx-5", style="background-color: #eee; width:200px; padding-left: 12px;">
+      <h4 class="text-center mb-5 mx-5", style="background-color: #eee; width:200px; padding-left: 12px;">
         <b>マイページ</b>
       </h4>
 
@@ -9,11 +9,12 @@
         <b class="mr-4">登録情報</b>
         <%= link_to "編集する", customers_infomation_edit_path, class:"btn btn-success w-25" %>
       </h4>
+      <div class="row">
       <table class="table mb-4" border="1">
         <tbody>
           <tr>
-            <td width="160", style="background-color: #e0ffe0;">氏名</td>
-            <td width="400"><%= @customer.last_name %>　<%= @customer.first_name %></td>
+            <td class="col-4", style="background-color: #e0ffe0;">氏名</td>
+            <td class="col-6"><%= @customer.last_name %>　<%= @customer.first_name %></td>
           </tr>
           <tr>
             <td style="background-color: #e0ffe0;">カナ</td>
@@ -37,6 +38,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
 
       <h4 class="mb-4">
         <b class="mr-4">配送先　</b>

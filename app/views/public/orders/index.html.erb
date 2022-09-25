@@ -1,4 +1,4 @@
-<div class="h2 pb-2 mb-4 mt-5 pl-4 text-success border-bottom border-success">
+<div class="h2 pb-2 mb-4 mt-3 pl-4 text-success border-bottom border-success">
   注文履歴一覧
 </div>
 
@@ -37,7 +37,7 @@
          </td>
          <td class="align-middle">&yen;<%= order.total_payment.to_s(:delimited) %></td>
          <td class="align-middle"><%= order.status_i18n %></td>
-         <td class="align-middle"><%= link_to "表示する", order_path(order), class: "btn btn-primary" %></td>
+         <td class="align-middle text-center"><%= link_to "表示する", order_path(order), class: "btn btn-primary" %></td>
       </tr>
      </tbody>
     <% end %>
