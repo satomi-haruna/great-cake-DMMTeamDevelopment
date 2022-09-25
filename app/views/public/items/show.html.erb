@@ -1,29 +1,26 @@
- <div class="container position-relative">
-    <div class="row">
-     <div class="col-md-3  mt-5">
-      <div class="card " style="width: 15rem;">
-       <div class="card-header text-center">
-        ジャンル検索
-       </div>
-       <ul class="list-group list-group-flush">
-        <% @genres.each do |genre| %>
-        <li class="list-group-item text-center"><%= link_to genre.name, admin_genres_path(genre_id: genre.id) %></li>
-        <% end %>
-       </ul>
+<div class="container position-relative">
+  <div class="row">
+    <div class="col-md-3  mt-5">
+      <div class="card mr-2">
+        <div class="card-header text-center">ジャンル検索</div>
+        <ul class="list-group list-group-flush">
+          <% @genres.each do |genre| %>
+            <li class="list-group-item text-center"><%= link_to genre.name, admin_genres_path(genre_id: genre.id) %></li>
+          <% end %>
+        </ul>
       </div>
-     </div>
     </div>
-   </div>
-<div class='container'>
-  <div class='row'>
-    <div class='col-md-8 offset-2'>
+    <div class='col-md-4'>
       <h4 class="text-center my-4 mt-5", style="background-color: #eee; width:200px; padding-left: 12px;"><b>商品詳細</b></h4>
       <div>
-        <%= image_tag @item.get_item_image %>
-        <p><%= @item.name %></p>
-        <p><%= @item.introduction %></p>
-        <p><%= @item.add_tax_price %>円（税込）</p>
+        <%= image_tag @item.get_item_image, class: "img-fluid" %>
       </div>
+    </div>
+    <div class='col-md-5 mt-5' style="top:100px;">
+      <div></div>
+      <p><%= @item.name %></p>
+      <p><%= @item.introduction %></p>
+      <p><%= @item.add_tax_price %>円（税込）</p>
       <div class='row'>
         <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
         <!--カート内商品を追加するためのフォームです-->
