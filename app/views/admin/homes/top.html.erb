@@ -1,40 +1,39 @@
-
-
 <% if flash %>
   <%= flash[:notice] %>
 <% end %>
-
 <div class='container'>
   <div class='row'>
     <div class='col-md-8 offset-2'>
-        <h4 class="text-center my-4 mt-5", style="background-color: #eee; width:200px; padding-left: 12px;"><b>注文履歴一覧</b></h4>
-        <table class="table text-center">
-            <thead class="table-success">
-                <tr>
-                    <th scope="col">購入日時</th>
-                    <th scope="col">購入者</th>
-                    <th scope="col">注文個数</th>
-                    <th scope="col">注文ステータス</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @orders.each do |order| %>
-                <tr class="vertical-align: middle">
-                    <td>
-                        <%= link_to admin_order_path(order.id) do %>
-                        <%= order.updated_at.to_date %>
-                        <% end %>
-                   </td>
-                    <td><%= order.customer.last_name + order.customer.first_name %></td>
-                    <td><%= order.order_details.sum(:amount) %></td>
-                    <td><%= order.status_i18n %></td>
-                </tr>
-                <% end %>
-            </tbody>
-        </table>
-        <%= paginate @orders %>
+      <h4 class="text-center my-4 mt-5", style="background-color: #eee; width:200px;"><b>注文履歴一覧</b></h4>
+      <table class="table text-center">
+        <thead class="table-success">
+          <tr>
+            <th scope="col">購入日時</th>
+            <th scope="col">購入者</th>
+            <th scope="col">注文個数</th>
+            <th scope="col">注文ステータス</th>
+          </tr>
+        </thead>
+        <% @orders.each do |order| %>
+        <tbody>
+          <tr class="vertical-align: middle">
+            <td>
+              <%= link_to admin_order_path(order.id) do %>
+                <%= order.updated_at.to_date %>
+              <% end %>
+            </td>
+            <td><%= order.customer.last_name + order.customer.first_name %></td>
+            <td><%= order.order_details.sum(:amount) %></td>
+            <td><%= order.status_i18n %></td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+      <%= paginate @orders %>
     </div>
   </div>
 </div>
+
+
 
 
