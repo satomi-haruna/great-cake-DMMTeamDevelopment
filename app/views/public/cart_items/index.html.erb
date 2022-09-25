@@ -2,7 +2,6 @@
   <div class="row justify-content-between">
     <div class='col-mb-4'>
       <!--bootstrapの入れ子構造-->
-
         <div class="col-mb-4">
           <h4 class="text-center mt-4 mb-4", style="background-color: #eee; width:250px;"><b>ショッピングカート</b></h2>
         </div>
@@ -59,15 +58,19 @@
         <% end %>
       </div>
       </div>
-      
-      
+
+
       <div class="col-3">
         <table class='table table-bordered'>
           <tbody>
             <tr>
               <% @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price } %>
               <th class="table table-active align-middle">合計金額</th>
+<<<<<<< HEAD
               <td nowrap><%= @total.to_s(:delimited) %> 円</td>
+=======
+              <td nowrap><%= @total.to_s(:delimited) %>円</td>
+>>>>>>> origin/develop
             </tr>
           </tbody>
         </table>

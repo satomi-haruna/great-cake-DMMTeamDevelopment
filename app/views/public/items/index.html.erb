@@ -1,15 +1,15 @@
- <div class="container-fluid position-relative">
-    <div class="row mx-auto">
-     <div class="col-md-2 ml-2 mt-5">
+<div class="container-fluid position-relative">
+  <div class="row mx-auto">
+    <div class="col-md-3 ml-2 mt-5">
       <div class="card mr-2">
-       <div class="card-header text-center">
+        <div class="card-header text-center">
         ジャンル検索
-       </div>
-       <ul class="list-group list-group-flush">
-        <% @genres.each do |genre| %>
-        <li class="list-group-item text-center"><%= link_to genre.name, admin_genres_path(genre_id: genre.id) %></li>
-        <% end %>
-       </ul>
+        </div>
+        <ul class="list-group list-group-flush">
+          <% @genres.each do |genre| %>
+            <li class="list-group-item text-center"><%= link_to genre.name, admin_genres_path(genre_id: genre.id) %></li>
+          <% end %>
+        </ul>
       </div>
      </div>
 
@@ -25,12 +25,13 @@
             <% @items.each do |item| %>
               <%= link_to item_path(item) do %>
               <div class="mr-3 mt-3">
-                <%= image_tag item.get_item_image.variant( resize: "300x300" ) %><br>
+                <%= image_tag item.get_item_image.variant( resize: "300" ) %><br>
               <% end %>
-                <p class="mt-3 mb-1"><%= item.name %></p>
-                <p class="mb-5"><%= item.add_tax_price %>円（税込)</p>
+              <p class="mt-3 mb-1"><%= item.name %></p>
+              <p class="mb-5"><%= item.add_tax_price %>円（税込)</p>
             </div>
             <% end %>
+
             </div>
           </div>
             <div class="row justify-content-center">
@@ -41,6 +42,5 @@
      </div>
 
     </div>
-   </div>
   </div>
-
+</div>
