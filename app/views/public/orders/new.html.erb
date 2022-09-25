@@ -1,10 +1,10 @@
-<div class="h2 pb-2 md-4">
+<div class="h2 pb-2 mb-4 mt-3 pl-4 text-success border-bottom border-success">
   注文情報入力
 </div>
 
 <div class="container">
   <div class="row g-3">
-    <div class="col-md-7 offset-md-2">
+    <div class="col-md-7 mt-5 offset-md-2">
       <%= form_with model:@order, url:orders_confirm_path, method: :post do |f| %>
 
 <h3><strong>支払方法</strong></h3>
