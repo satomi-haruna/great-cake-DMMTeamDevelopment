@@ -15,10 +15,10 @@
 
 
 
-          <div class=' col-md-8 ml-8'>
+          <div class=' col-md-9 text-left'>
             <div class="row mt-5 pb-2">
             <h2 class="text-center", style="background-color: #eee; width:200px; padding-left: 12px;"><b>商品一覧 </b></h2>
-            <div class="ml-2 mt-3">
+            <div class="ml-2 mb-3">
             全<%= @items.count %>件
             <div class="new-arrival">
               <div class="new-arrival-contents" style="display:flex; flex-wrap:wrap;">
@@ -31,8 +31,7 @@
                 <p class="mb-5"><%= item.add_tax_price %>円（税込)</p>
             </div>
             <% end %>
-            <div class="row">
-            <div class="text-cente">
+            <div class="row justify-content-center align-items-end mt-7">
             <%= paginate @items %>
             </div>
             </div>
