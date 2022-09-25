@@ -1,11 +1,14 @@
-<h2>注文履歴詳細</h2>
+<div class="h2 pb-2 mb-4 mt-5 pl-4 text-success border-bottom border-success">
+  注文履歴詳細
+</div>
 
 <div class="container">
-  <div class="row">
+  <div class="row g-3">
 
-<div class="col-md-6">
-    <strong>注文情報</strong>
+<div class="col-md-7 offser-md-1 ">
+    <div class="mb-2"><strong>注文情報</strong></div>
       <table class="table table-bordered">
+        <thead>
         <tr>
           <th class="table-active">注文日</th>
           <td><%= @order.created_at.to_date %></td>
@@ -26,12 +29,13 @@
           <th class="table-active">ステータス</th>
            <td><%= @order.status_i18n %></td>
         </tr>
+       </thead>
       </table>
   </div>
 
-  <div class="col-md-3">
-    <strong>請求内容</strong>
-    <table class-"table table-bordered">
+  <div class="col-md-5">
+    <div class="mb-2"><strong>請求内容</strong></div>
+    <table class="table table-bordered">
       <tr>
         <th class="table-active">商品合計</th>
          <% @order_subtotal = @order.total_payment - @order.postage %>
@@ -48,9 +52,9 @@
     </table>
   </div>
 
-  <div class="row">
-    <div class="col-md-6">
-      <strong>注文内容</strong>
+
+    <div class="col-md-6 text-nowrap">
+      <div class="mb-2"><strong>注文内容</strong></div>
         <table class="table table-bordered">
           <thead>
             <tr>
