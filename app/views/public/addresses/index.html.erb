@@ -61,9 +61,10 @@
       <td class="align-middle"><%= address.name %></td>
       <td class="align-middle text-center">
           <%= link_to  "編集する", edit_address_path(address.id), class: 'btn btn-info' %>
-          <%= link_to address_path(address.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>
-            <i class="fa-solid fa-trash-can fa-2x", style="color:#c0c0c0;"></i>
-          <% end %>
+          <%= link_to  "削除する", address_path(address.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger mx-auto' %>
+          <!--%= link_to address_path(address.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>-->
+          <!--  <i class="fa-solid fa-trash-can fa-2x", style="color:#c0c0c0;"></i>-->
+          <!--% end %>-->
       </td>
      </tr>
      <% end %>
