@@ -1,5 +1,5 @@
 <div class="container">
-  <h4 class="text-center my-4 mt-5", style="background-color: #eee; width:auto; padding-left: 12px;">
+  <h4 class="text-center my-4 mt-5", style="background-color: #eee; width: 600px;">
     <b><%= @customer.last_name %><%= @customer.first_name %>さんの会員情報編集</b>
   </h4>
   <%= form_with model: @customer, url: admin_customer_path, method: :patch do |f| %>

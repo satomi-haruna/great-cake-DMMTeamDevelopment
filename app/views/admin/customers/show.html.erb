@@ -1,6 +1,6 @@
 <div class='container'>
   <div>
-    <h4 class="text-center my-4 mt-5", style="background-color: #eee; width: 700px;">
+    <h4 class="text-center my-4 mt-5", style="background-color: #eee; width: 500px;">
       <b><%= @customer.last_name %> <%= @customer.first_name %>さんの会員詳細</b>
     </h4>
     <table class='table table-borderless'>
@@ -51,7 +51,7 @@
           </td>
           <td>
             <!--リンクパスの変更必要あり-->
-            <%= link_to "注文履歴一覧を見る", about_path, class:"btn btn-primary" %>
+            <%= link_to "注文履歴一覧を見る", admin_root_path, class:"btn btn-primary" %>
           </td>
         </tr>
       </tbody>
