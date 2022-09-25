@@ -1,4 +1,5 @@
 <div class='container'>
+  <div class="row justify-content-center">
   <div class='col-md-6'>
     <h4 class="text-center my-4 mt-5", style="background-color: #eee; width: 300px;"><b>ジャンル一覧・追加</b></h4>
     <%= form_with model: @new_genre, url: admin_genres_path, method: :post do |f| %>
@@ -32,4 +33,5 @@
     </table>
     <%= paginate @genres %>
   </div>
+</div>
 </div>
