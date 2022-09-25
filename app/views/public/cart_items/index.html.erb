@@ -2,17 +2,15 @@
   <div class="row">
     <div class='offset-lg-1 col'>
       <!--bootstrapの入れ子構造-->
-      <div class="row">
-        <div class="col-lg-1 col-md-1">
-          <h4 class="text-center mt-4 mb-4", style="background-color: #eee; width:250px;"><b>ショッピングカート</b></h2>
-        </div>
-
-        <div class="offset-lg-8 offset-md-7 col">
-          <%= link_to '/cart_items', method: :delete do %>
-            <button type="button" class="btn btn-danger mt-4 mb-4">カートを空にする</button>
-          <% end %>
-        </div>
+      <div class="col-lg-1 col-md-1">
+        <h4 class="text-center mt-4 mb-4", style="background-color: #eee; width:250px;"><b>ショッピングカート</b></h2>
       </div>
+      <div class="offset-lg-8 offset-md-7 col">
+        <%= link_to '/cart_items', method: :delete do %>
+          <button type="button" class="btn btn-danger mt-4 mb-4">カートを空にする</button>
+        <% end %>
+      </div>
+    </div>
 
     <table class='table'>
       <thead>
@@ -25,12 +23,12 @@
         </tr>
       </thead>
       <tbody>
-      <% @cart_items.each do |cart_item| %>
+        <% @cart_items.each do |cart_item| %>
         <tr>
           <td class="align-middle">
             <%= image_tag cart_item.item.image.variant( resize: "80" ) %>
             <%= cart_item.item.name %>
-           </td>
+          </td>
           <td class="align-middle"><%= cart_item.item.add_tax_price.to_s(:delimited) %>円</td>
           <td class="align-middle">
             <%= form_with model: cart_item, method: :patch do |f| %>
@@ -48,7 +46,7 @@
             <% end %>
           </td>
         </tr>
-      <% end %>
+        <% end %>
       </tbody>
     </table>
 
