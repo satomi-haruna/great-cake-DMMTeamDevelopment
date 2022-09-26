@@ -1,4 +1,4 @@
-<div class="h2 pb-2 mb-4 mt-3 pl-4 text-success border-bottom border-success">
+<div class="h2 pb-2 mb-4 mt-3 pl-5 text-success border-bottom border-success">
   注文情報入力
 </div>
 
@@ -7,12 +7,13 @@
     <div class="col-md-7 mt-5 offset-md-2">
       <%= form_with model:@order, url:orders_confirm_path, method: :post do |f| %>
 
-<h3><strong>支払方法</strong></h3>
-  <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
-  <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %>
+      <h3><strong>支払方法</strong></h3>
+        <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
+        <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %>
 
-  <p><%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
-  <%= f.label :payment_method, Order.payment_methods_i18n[:transfer]%></p>
+        <p><%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
+        <%= f.label :payment_method, Order.payment_methods_i18n[:transfer]%></p>
+
 
 <h3><strong>お届け先</strong></h3>
 <!--ご自身の住所-->

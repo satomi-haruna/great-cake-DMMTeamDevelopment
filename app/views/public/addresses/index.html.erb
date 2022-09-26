@@ -1,14 +1,14 @@
 <div class="container">
  <div class="row">
   <div class="col-md-8 offset-2">
-    <h4 class="text-center my-4 mt-5", style="background-color: #eee; width:200px; padding-left: 12px;"><b>配送先登録/一覧</b></h4>
+    <h4 class="text-center my-4", style="background-color: #eee; width:200px; padding-left: 12px;"><b>配送先登録/一覧</b></h4>
+
+    <p id="notice">
+     <%=  notice %>
+    </p>
   </div>
  </div>
 </div>
-
-<p id="notice">
- <%=  notice %>
-</p>
 
 <div class="container">
  <div class="row">
@@ -44,14 +44,14 @@
 
    <table class="table table-bordered mt-5">
     <thead>
-     <tr class="table-success">
-      <th style="width:100px;">郵便番号</th>
+     <tr class="table-success0", style="background-color: #e0ffe0;">
+      <th style="width:10%;">郵便番号</th>
       <th style="width:50%;">住所</th>
-      <th style="width:200px;">宛名</th>
-      <th style="width:100%;"></th>
+      <th style="width:20%;">宛名</th>
+      <th style="width:20%;"></th>
      </tr>
     </thead>
-    
+
     <tbody>
      <% @addresses.each do |address| %>
 
@@ -59,9 +59,12 @@
       <td class="align-middle"><%= address.post_code %></td>
       <td class="align-middle"><%= address.address %></td>
       <td class="align-middle"><%= address.name %></td>
-      <td>
-          <%= link_to  "編集する", edit_address_path(address.id), class: 'btn btn-info mx-auto' %> 
+      <td class="align-middle text-center">
+          <%= link_to  "編集する", edit_address_path(address.id), class: 'btn btn-info' %>
           <%= link_to  "削除する", address_path(address.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger mx-auto' %>
+          <!--%= link_to address_path(address.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>-->
+          <!--  <i class="fa-solid fa-trash-can fa-2x", style="color:#c0c0c0;"></i>-->
+          <!--% end %>-->
       </td>
      </tr>
      <% end %>

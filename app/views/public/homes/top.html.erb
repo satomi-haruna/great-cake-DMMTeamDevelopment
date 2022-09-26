@@ -1,9 +1,10 @@
- <div class="ml-5">
-   <% if flash %>
-    <%= flash[:notice] %>
-   <% end %>
- </div>
-    
+<div class="container">
+  <div class="row ml-3">
+    <% if flash %>
+      <%= flash[:notice] %>
+    <% end %>
+  </div>
+</div>
 <div class="container position-relative">
   <div class="row">
     <div class="col-lg-3 ml-2 mt-5">
@@ -18,7 +19,6 @@
         </ul>
       </div>
     </div>
-
 
     <div class="col-lg-8 col-md-5 ml-4">
       <div class="row mt-5 pb-2">
@@ -36,7 +36,7 @@
             <% @items.first(4).each do |item| %>
               <div class="mr-3 mt-3">
                 <%= link_to item_path(item.id) do %>
-                  <%= image_tag item.image, size:"160x120" %>
+                  <%= image_tag item.image, size:"160x120" %><br>
                   <p clas="mt-3 mb-1"><%= item.name %></p>
                   <p class="mb-5">&yen;<%= item.price %></p>
                 <% end %>
@@ -45,7 +45,7 @@
           </div>
 
           <div class="row">
-            <div class="col-md-8 offset-md-5 mt-3 text-nowrap text-right ">
+            <div class="col-lg-8 offset-lg-4 mt-3 text-nowrap text-right ">
               <%= link_to "全ての商品を見る", items_path %>
           </div>
          </div>
