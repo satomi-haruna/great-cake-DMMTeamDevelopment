@@ -1,53 +1,12 @@
 <div class="container text-center">
   <div class="row justify-content-between">
-    <div class='col-mb-4'>
-      <!--bootstrapの入れ子構造-->
-        <div class="col-mb-4">
-          <h4 class="text-center mt-4 mb-4", style="background-color: #eee; width:250px;"><b>ショッピングカート</b></h2>
-        </div>
-
-      </div>
-        <div class="row mt-5">
-          <%= link_to '/cart_items', method: :delete do %>
-            <button type="button" class="btn btn-danger mt-4 mb-4">カートを空にする</button>
-          <% end %>
-        </div>
-
-    <table class='table table-bordered'>
-      <thead>
-        <tr>
-          <th class="table-active">商品名</th>
-          <th class="table-active">単価（税込み）</th>
-          <th class="table-active">数量</th>
-          <th class="table-active">小計</th>
-          <th class="table-active"></th>
-        </tr>
-      </thead>
-      <% @cart_items.each do |cart_item| %>
-      <tbody>
-        <tr>
-          <td class="align-middle">
-            <%= image_tag cart_item.item.image.variant( resize: "80" ) %>
-            <%= cart_item.item.name %>
-          </td>
-          <td class="align-middle"><%= cart_item.item.add_tax_price.to_s(:delimited) %>円</td>
-          <td class="align-middle">
-            <%= form_with model: cart_item, method: :patch do |f| %>
-            <!--カート内商品を追加するためのフォームです-->
-              <%= f.select :amount, *[1..50] %>
-              <!--cart_itemモデルにquantityを渡すためのフォームです-->
-              <%= f.submit "変更", class: "btn btn-sm btn-success" %>
-            <% end %>
-          </td>
-          <td class="align-middle"><%= cart_item.sum_of_price.to_s(:delimited) %>円</td>
-          <td class="align-middle">
-            <%= link_to cart_item_path(cart_item.id), method: :delete do %>
-              <!--<button type="button" class="btn btn-danger">削除する</button>-->
-              <i class="fa-solid fa-trash-can fa-2x", style="color:#c0c0c0;"></i>
-            <% end %>
-          </td>
-        </tr>
-      </tbody>
+    <!--bootstrapの入れ子構造-->
+    <div class="col-md-4 mb-4">
+      <h4 class="text-center mt-3 mb-4", style="background-color: #eee; width:250px;"><b>ショッピングカート</b></h2>
+    </div>
+    <div class="col-lg-8 col-md-5 mb-lg-4">
+      <%= link_to '/cart_items', method: :delete, class:"float-right" do %>
+        <button type="button" class="btn btn-danger mt-lg-4 mb-lg-2">カートを空にする</button>
       <% end %>
     </div>
   </div>
